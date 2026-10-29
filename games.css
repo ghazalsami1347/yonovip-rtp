@@ -29,3 +29,13 @@
 @media(min-width:1000px){.grid{gap:14px}.game-info{padding:11px 12px 13px}.game-info h3{font-size:14px;min-height:37px}.game-rate>span{font-size:10px}.game-rate strong{font-size:14px}.game-save{top:3px;right:3px}.game-save::before{inset:5px}.game-save>.icon{width:19px;height:19px}}
 @media(prefers-reduced-motion:reduce){.game-meter i{transition:none}}
 .game-rate>span::before{display:none}
+
+/* Keep the primary action clear of bottom-right host badges and their hit area. */
+@media(max-width:999px){
+  body{padding-bottom:calc(154px + env(safe-area-inset-bottom))}
+  html{scroll-padding-bottom:calc(154px + env(safe-area-inset-bottom))}
+  .download-dock{display:grid;grid-template-columns:minmax(0,1fr);gap:8px;padding-top:10px}
+  .download-dock>a{grid-row:1;width:100%;min-height:46px}
+  .download-dock>div{grid-row:2;min-height:52px;max-width:calc(100% - 175px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+  #toast{bottom:calc(154px + env(safe-area-inset-bottom))}
+}
