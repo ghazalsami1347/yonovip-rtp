@@ -1,0 +1,23 @@
+/* Only small, composited transform/opacity animations; no perpetual effects. */
+header,.download-dock{backdrop-filter:none;background:#0d1b13}
+dialog::backdrop{backdrop-filter:none}
+.hero-logo{filter:none}
+.meter{overflow:hidden}
+.meter i{width:100%!important;transform-origin:left;transform:scaleX(.9642);transition:transform 700ms ease-out}
+.primary,.download-dock>a,.tabs button,.quick-nav>a,.quick-nav>button,.sample-save,.text-button,.close{transition:transform 130ms ease-out}
+.primary:active,.download-dock>a:active,.tabs button:active,.quick-nav>a:active,.quick-nav>button:active,.sample-save:active,.text-button:active,.close:active{transform:scale(.975)}
+.search:focus-within{outline:1px solid var(--gold);outline-offset:2px}
+.primary{isolation:isolate;overflow:hidden}
+html[data-motion="full"] .primary::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(105deg,transparent 30%,#fff5 48%,transparent 65%);pointer-events:none;animation:gold-pass 850ms 160ms both}
+@keyframes gold-pass{from{transform:translateX(-115%)}to{transform:translateX(115%)}}
+@media(hover:hover) and (pointer:fine){
+  .help-list>a .help-icon,.help-list>a>span:last-child,.primary>span,.all-help>.icon{transition:transform 180ms ease-out}
+  .help-list>a:hover .help-icon{transform:translateY(-2px)}
+  .help-list>a:hover>span:last-child,.primary:hover>span,.all-help:hover>.icon{transform:translate(2px,-2px)}
+}
+@media(prefers-reduced-motion:reduce){
+  html:focus-within,html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .primary:active,.download-dock>a:active,.tabs button:active,.quick-nav>a:active,.quick-nav>button:active,.sample-save:active,.text-button:active,.close:active{transform:none}
+  .help-list>a:hover .help-icon,.help-list>a:hover>span:last-child,.primary:hover>span,.all-help:hover>.icon{transform:none}
+}
