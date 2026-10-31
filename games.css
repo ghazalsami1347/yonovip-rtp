@@ -39,3 +39,5 @@
   .download-dock>div{grid-row:2;min-height:52px;max-width:calc(100% - 175px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
   #toast{bottom:calc(154px + env(safe-area-inset-bottom))}
 }
+
+.rtp-updated{margin-left:auto;text-align:right;color:#9caf9e;font-size:10px;line-height:1.6}.rtp-updated b{color:#c9d6c4;font-weight:600;font-variant-numeric:tabular-nums}
