@@ -44,8 +44,8 @@
   addEventListener('pagehide', stop);
 
   window.yonoMotion = {
-    dialog() {
-      play(document.querySelector('#modal'), light
+    dialog(element = document.querySelector('#modal')) {
+      play(element, light
         ? [{ opacity: .7 }, { opacity: 1 }]
         : [{ opacity: .3, transform: 'translateY(14px) scale(.98)' }, { opacity: 1, transform: 'translateY(0) scale(1)' }], 240);
     },

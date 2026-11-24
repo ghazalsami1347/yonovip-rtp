@@ -1,0 +1,31 @@
+/* Promo alerts popup: optional phone sign-up, closable, shown once per visit at most. */
+#promoModal{padding:30px 22px 22px;width:min(92%,420px);text-align:center;overflow:hidden}
+#promoModal::before{content:"";position:absolute;inset:0 0 auto;height:140px;background:radial-gradient(ellipse at 50% 0,#d6b25233,transparent 70%);pointer-events:none}
+#promoModal>*{position:relative}
+#promoModal .close{position:absolute}
+.promo-badge{width:58px;height:58px;margin:4px auto 0;display:grid;place-items:center;border-radius:16px;background:linear-gradient(140deg,#2a5236,#132a1b);border:1px solid #d6b25255;color:var(--gold);transform:rotate(-6deg);box-shadow:0 10px 30px #0006}
+.promo-badge .icon{width:30px;height:30px}
+#promoModal h2{text-wrap:balance;font-size:23px;line-height:1.25;letter-spacing:-.6px;margin:16px 0 8px}
+#promoModal h2 em{font-style:normal;color:var(--gold);display:block}
+#promoModal .promo-lede{margin:0 0 18px;font-size:13px;line-height:1.7}
+.promo-perks{list-style:none;padding:0;margin:0 0 18px;display:flex;justify-content:center;flex-wrap:wrap;gap:6px}
+.promo-perks li{font-size:11px;color:#d9c48c;background:#d6b25212;border:1px solid #d6b25230;border-radius:20px;padding:4px 10px}
+.promo-field{display:flex;align-items:stretch;border:1px solid #294032;border-radius:9px;background:#0b160f;min-height:52px;text-align:left}
+.promo-field:focus-within{border-color:var(--gold)}
+.promo-field>span{display:flex;align-items:center;gap:6px;padding:0 12px;border-right:1px solid #294032;color:#cfd9cd;font-weight:650;font-size:15px;white-space:nowrap}
+.promo-field input{flex:1;min-width:0;background:none;border:0;outline:none;color:#f2f6ef;font-size:17px;letter-spacing:.5px;padding:0 13px}
+.promo-field input::placeholder{color:#6f8574;letter-spacing:0}
+.promo-field[data-invalid] {border-color:#ff9696}
+.promo-error{min-height:18px;font-size:11px;color:#ff9a9a;text-align:left;margin:6px 2px 4px}
+.promo-channel{display:grid;grid-template-columns:1fr 1fr;gap:8px;border:0;padding:0;margin:0 0 14px}
+.promo-channel legend{font-size:11px;color:#9eb29f;margin-bottom:7px;text-align:left;padding:0}
+.promo-channel label{display:flex;align-items:center;justify-content:center;gap:7px;min-height:44px;border:1px solid #c2cfa31f;border-radius:8px;color:#a9b8ab;font-size:13px;cursor:pointer}
+.promo-channel input{position:absolute;opacity:0;pointer-events:none}
+.promo-channel label:has(input:checked){background:#d3ba7420;border-color:#d3ba7466;color:var(--gold)}
+.promo-channel label:has(input:focus-visible){outline:2px solid var(--gold);outline-offset:2px}
+.promo-submit{width:100%;min-height:50px;border:0;border-radius:9px;background:linear-gradient(110deg,#f6dfa0,#d6b252);color:#142116;font-weight:750;font-size:15px;display:flex;align-items:center;justify-content:center;gap:8px}
+.promo-submit:disabled{opacity:.6;cursor:progress}
+.promo-later{background:none;border:0;color:#9eb29f;font-size:12px;min-height:44px;margin-top:4px;text-decoration:underline;text-underline-offset:3px}
+#promoModal .promo-consent{font-size:10px;line-height:1.6;color:#83998a;margin:6px 0 0}
+.promo-done .promo-badge{color:var(--green);border-color:#68dd9e55}
+@media(min-width:600px){#promoModal{padding:34px 30px 24px}#promoModal h2{font-size:26px}}
