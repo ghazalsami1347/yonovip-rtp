@@ -8,6 +8,11 @@
   const SNOOZE_DAYS = 3;            // after "close", stay quiet this long
   const KEY = 'yonovip-promo';
 
+  // GA4: count clicks on the Promo Codes quick link (works even when the popup is snoozed).
+  document.querySelector('.promo-nav')?.addEventListener('click', () => {
+    try { window.gtag?.('event', 'promo_codes_click', { link_location: 'quick_nav' }); } catch {}
+  });
+
   const dialog = document.querySelector('#promoModal');
   if (!dialog || typeof dialog.showModal !== 'function') return;
   const form = dialog.querySelector('#promoForm');
